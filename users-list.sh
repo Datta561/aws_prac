@@ -1,5 +1,7 @@
 #!/bin/bash
 
+except ()
+
 # GitHub API URL
 API_URL="https://api.github.com"
 
@@ -36,6 +38,12 @@ function list_users_with_read_access {
     fi
 }
 
+#exception function 
+function except{
+ expected_cmd_args=2
+ if [ $# -ne $expected_cmd_args]; then
+ echo "please execute the required script"
+}
 # Main script
 
 echo "Listing users with read access to ${REPO_OWNER}/${REPO_NAME}..."
